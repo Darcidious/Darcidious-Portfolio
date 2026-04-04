@@ -1,0 +1,49 @@
+import './About.css'
+
+const SKILLS = [
+  'Nuke', 'After Effects', 'Houdini', 'Blender', 'DaVinci Resolve',
+  'Rotoscoping', 'Motion Tracking', 'Color Grading', 'Green Screen / VFX',
+  'Particle Simulation', 'Lighting', 'Rendering',
+]
+
+export default function About() {
+  return (
+    <section className="about section">
+      <div className="container about__inner">
+
+        {/* Left — image slot */}
+        <div className="about__media">
+          {/* Replace the placeholder div with your portrait or reel still */}
+          <div className="about__media-placeholder" aria-hidden="true" />
+        </div>
+
+        {/* Right — bio */}
+        <div className="about__content">
+          <p className="section-label">About</p>
+
+          <h1 className="about__heading text-display">
+            Crafting<br/>Invisible<br/>Worlds
+          </h1>
+
+          <p className="about__bio">
+            Darcidious is a VFX artist and compositor with a passion for
+            photorealistic integration, procedural effects, and cutting-edge
+            post-production workflows. With a background spanning film, games,
+            and motion graphics, every frame is treated as a canvas.
+          </p>
+
+          <div className="about__skills">
+            {SKILLS.map((s) => (
+              <span key={s} className="tag">{s}</span>
+            ))}
+          </div>
+
+          <a href="/contact" className="btn-accent" style={{ marginTop: '1rem' }}>
+            Work Together
+          </a>
+        </div>
+
+      </div>
+    </section>
+  )
+}
