@@ -1,4 +1,6 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
+import { AnimatePresence } from 'framer-motion'
+import SmudgeTransition from './components/ui/SmudgeTransition'
 import Layout from './components/layout/Layout'
 import Home from './pages/Home'
 import About from './pages/About'
@@ -8,16 +10,20 @@ import ProjectDetail from './pages/ProjectDetail'
 import NotFound from './pages/NotFound'
 
 export default function App() {
+  const location = useLocation()
+
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="work" element={<Work />} />
-        <Route path="work/:slug" element={<ProjectDetail />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="*" element={<NotFound />} />
-      </Route>
-    </Routes>
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Layout />}>
+           <Route index element={<SmudgeTransition><Home /></SmudgeTransition>} />
+           <Route path="about" element={<SmudgeTransition><About /></SmudgeTransition>} />
+           <Route path="work" element={<SmudgeTransition><Work /></SmudgeTransition>} />
+           <Route path="work/:slug" element={<SmudgeTransition><ProjectDetail /></SmudgeTransition>} />
+           <Route path="contact" element={<SmudgeTransition><Contact /></SmudgeTransition>} />
+           <Route path="*" element={<SmudgeTransition><NotFound /></SmudgeTransition>} />
+        </Route>
+      </Routes>
+    </AnimatePresence>
   )
 }

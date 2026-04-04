@@ -10,17 +10,18 @@ interface Props {
 export default function ProjectCard({ project }: Props) {
   const [showTexture, setShowTexture] = useState(false)
 
-  const hasTexture = !!project.textureThumbnail
-  const activeThumbnail =
-    hasTexture && showTexture ? project.textureThumbnail! : project.thumbnail
+  const isVideo = project.mediaType === 'video'
+  const hasTexture = isVideo ? !!project.textureVideoSrc : !!project.textureThumbnail
+  const activeThumbnail = hasTexture && showTexture ? project.textureThumbnail! : project.thumbnail
+  const activeVideo = hasTexture && showTexture ? project.textureVideoSrc! : project.videoSrc
 
   return (
     <Link to={`/work/${project.slug}`} className="project-card">
       <div className="project-card__thumb">
-        {project.mediaType === 'video' ? (
+        {isVideo ? (
           <video
             className="project-card__video"
-            src={project.videoSrc}
+            src={activeVideo}
             muted
             autoPlay
             loop

@@ -19,9 +19,10 @@ export default function ProjectDetail() {
     )
   }
 
-  const hasTexture = !!project.textureThumbnail
-  const activeImage =
-    hasTexture && showTexture ? project.textureThumbnail! : project.thumbnail
+  const isVideo = project.mediaType === 'video'
+  const hasTexture = isVideo ? !!project.textureVideoSrc : !!project.textureThumbnail
+  const activeImage = hasTexture && showTexture ? project.textureThumbnail! : project.thumbnail
+  const activeVideo = hasTexture && showTexture ? project.textureVideoSrc! : project.videoSrc
 
   return (
     <article className="project-detail section">
@@ -46,16 +47,26 @@ export default function ProjectDetail() {
 
         {/* Main media */}
         <div className="project-detail__media">
-          {project.mediaType === 'video' ? (
-            <video
-              src={project.videoSrc}
-              controls
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="project-detail__video"
-            />
+          {isVideo ? (
+            <div className="project-detail__image-wrap">
+              <video
+                src={activeVideo}
+                controls
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="project-detail__video"
+              />
+              {hasTexture && (
+                <button
+                  className={`project-detail__toggle${showTexture ? ' project-detail__toggle--active' : ''}`}
+                  onClick={() => setShowTexture((v) => !v)}
+                >
+                  {showTexture ? 'Beauty Pass' : (project.textureLabel ?? 'Texture Pass')}
+                </button>
+              )}
+            </div>
           ) : (
             <>
               <div className="project-detail__image-wrap">

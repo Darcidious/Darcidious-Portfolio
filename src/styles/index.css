@@ -1,5 +1,5 @@
 /* ============================================================
-   DARCIDIOUS — Global Design System
+   DARCIDIOUS : Global Design System
    ============================================================ */
 
 /* ---------- CSS Custom Properties ---------- */
@@ -9,7 +9,7 @@
   --clr-surface:    #111111;
   --clr-surface-2:  #1a1a1a;
   --clr-border:     rgba(255, 255, 255, 0.08);
-  --clr-accent:     #c8ff00;          /* electric lime — VFX feel */
+  --clr-accent:     #c8ff00;          /* electric lime : VFX feel */
   --clr-accent-dim: rgba(200, 255, 0, 0.15);
   --clr-text:       #e8e8e8;
   --clr-text-muted: #606060;
@@ -176,14 +176,6 @@ ul, ol {
   text-transform: uppercase;
   color: var(--clr-accent);
   margin-bottom: 1rem;
-}
-
-.section-label::before {
-  content: '';
-  display: block;
-  width: 2rem;
-  height: 1px;
-  background: var(--clr-accent);
 }
 
 /* ---------- Page placeholder ---------- */

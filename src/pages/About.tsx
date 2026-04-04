@@ -11,10 +11,13 @@ export default function About() {
     <section className="about section">
       <div className="container about__inner">
 
-        {/* Left — image slot */}
+        {/* Left — image */}
         <div className="about__media">
-          {/* Replace the placeholder div with your portrait or reel still */}
-          <div className="about__media-placeholder" aria-hidden="true" />
+          <img
+            src="/Darcidious.png"
+            alt="Darcidious Logo"
+            className="about__media-img"
+          />
         </div>
 
         {/* Right — bio */}
@@ -38,9 +41,11 @@ export default function About() {
             ))}
           </div>
 
-          <a href="/contact" className="btn-accent" style={{ marginTop: '1rem' }}>
-            Work Together
-          </a>
+          <div style={{ marginTop: '1.5rem' }}>
+            <a href="/contact" className="btn-accent">
+              Work Together
+            </a>
+          </div>
         </div>
 
       </div>

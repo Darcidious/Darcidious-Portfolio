@@ -14,12 +14,13 @@ export interface Project {
   thumbnail: string
   /** Texture / clay / alternate pass — optional */
   textureThumbnail?: string
-  /** Label shown on the texture toggle button */
   textureLabel?: string
   tags: string[]
   mediaType: MediaType
   /** For videos, the src file path */
   videoSrc?: string
+  /** For videos, secondary src file path (like clay pass) */
+  textureVideoSrc?: string
   /** For images used in detail view */
   detailImages?: string[]
   description: string
@@ -42,13 +43,13 @@ const PROJECTS: Project[] = [
       '/Renders/webp/Miniature Cabin Texture.webp',
     ],
     description:
-      'A photorealistic miniature cabin rendered in Blender with full procedural texturing and cinematic compositing.',
+      'I created this photorealistic miniature cabin in Blender complete with full procedural texturing and cinematic compositing.',
   },
   {
     slug: 'nuclear-winter',
     title: 'Nuclear Winter',
     category: 'Still Render',
-    year: 2024,
+    year: 2025,
     thumbnail: '/Renders/webp/Nuclear Winter.webp',
     textureThumbnail: '/Renders/webp/Nuclear Winter Texture.webp',
     textureLabel: 'Texture',
@@ -59,13 +60,13 @@ const PROJECTS: Project[] = [
       '/Renders/webp/Nuclear Winter Texture.webp',
     ],
     description:
-      'Post-apocalyptic winter environment featuring heavy atmospheric fog, particle simulation, and multi-pass compositing.',
+      'I built this post apocalyptic winter environment featuring heavy atmospheric fog particle simulation and multi pass compositing.',
   },
   {
     slug: 'rapunzel-tower',
     title: "Rapunzel's Tower",
     category: 'Still Render',
-    year: 2024,
+    year: 2026,
     thumbnail: "/Renders/webp/Rapunzel_s tower.webp",
     textureThumbnail: "/Renders/webp/Rapunzel_s Tower Alternate Angles and Scatter Maps.webp",
     textureLabel: 'Alt / Scatter',
@@ -76,30 +77,30 @@ const PROJECTS: Project[] = [
       "/Renders/webp/Rapunzel_s Tower Alternate Angles and Scatter Maps.webp",
     ],
     description:
-      "Stylised tower scene with scatter-painted foliage and alternate camera angles.",
+      "I designed this stylised tower scene with scatter painted foliage and alternate camera angles.",
   },
   {
     slug: 'ant',
     title: 'Ant',
     category: 'Still Render',
-    year: 2024,
+    year: 2025,
     thumbnail: '/Renders/webp/Ant.webp',
     tags: ['Blender', 'Character', 'Rendering'],
     mediaType: 'image',
     detailImages: ['/Renders/webp/Ant.webp'],
     description:
-      'Close-up macro render of a hyper-detailed ant with subsurface scattering and micro-displacement.',
+      'I rendered this close up macro shot of a hyper detailed ant with subsurface scattering and micro displacement.',
   },
   {
     slug: 'calendar',
     title: 'Calendar',
     category: 'Still Render',
-    year: 2024,
+    year: 2026,
     thumbnail: '/Renders/webp/Calendar.webp',
     tags: ['Blender', 'Product Render'],
     mediaType: 'image',
     detailImages: ['/Renders/webp/Calendar.webp'],
-    description: 'Clean product render of a desk calendar with soft studio lighting.',
+    description: 'I created this clean product render of a desk calendar using soft studio lighting.',
   },
 
   // ── Video renders ─────────────────────────────────────────
@@ -107,46 +108,36 @@ const PROJECTS: Project[] = [
     slug: 'chocolate-pour',
     title: 'Chocolate Pour',
     category: 'Animation',
-    year: 2024,
+    year: 2025,
     thumbnail: '/Renders/webp/Ant.webp', // swap for a proper thumbnail if available
     tags: ['Blender', 'Fluid Simulation', 'Animation'],
     mediaType: 'video',
     videoSrc: '/Renders/video/Chocolate pour.mp4',
-    description: 'Real-time fluid simulation of molten chocolate using Mantaflow in Blender.',
+    description: 'I ran a real time fluid simulation of molten chocolate using Mantaflow in Blender.',
   },
   {
     slug: 'oil-rig',
     title: 'Oil Rig',
     category: 'Animation',
-    year: 2024,
-    thumbnail: '/Renders/webp/Nuclear Winter.webp',
+    year: 2026,
+    thumbnail: '/Renders/webp/Ant.webp', // Using Ant as fallback since no dedicated still exists
+    textureLabel: 'Clay Pass',
     tags: ['Blender', 'Hard Surface', 'Animation'],
     mediaType: 'video',
     videoSrc: '/Renders/video/Oil RIg.mp4',
-    description: 'Hard-surface oil rig environment with cinematic camera motion and atmospheric haze.',
-  },
-  {
-    slug: 'oil-rig-clay',
-    title: 'Oil Rig — Clay',
-    category: 'Animation',
-    year: 2024,
-    thumbnail: '/Renders/webp/Nuclear Winter.webp',
-    textureThumbnail: undefined,
-    tags: ['Blender', 'Clay Render'],
-    mediaType: 'video',
-    videoSrc: '/Renders/video/Oil Rig Clay.mp4',
-    description: 'Clay pass of the Oil Rig for model review and texture baking reference.',
+    textureVideoSrc: '/Renders/video/Oil Rig Clay.mp4',
+    description: 'I built this hard surface oil rig environment featuring cinematic camera motion and atmospheric haze. The clay pass was rendered for model review and texture baking reference.',
   },
   {
     slug: 'rave-train',
     title: 'Rave Train',
     category: 'Animation',
-    year: 2024,
-    thumbnail: '/Renders/webp/Miniature Cabin.webp',
+    year: 2025,
+    thumbnail: '/Renders/webp/Ant.webp', // Using Ant as fallback since no dedicated still exists
     tags: ['Blender', 'Lighting', 'Animation'],
     mediaType: 'video',
     videoSrc: '/Renders/video/Rave Train.mp4',
-    description: 'Neon-lit train interior with volumetric lights, particle smoke, and a full animation loop.',
+    description: 'I created this neon lit train interior with volumetric lights particle smoke and a full animation loop.',
   },
 ]
 

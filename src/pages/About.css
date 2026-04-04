@@ -17,12 +17,11 @@
   top: calc(var(--nav-h) + 2rem);
 }
 
-.about__media-placeholder {
+.about__media-img {
   width: 100%;
-  aspect-ratio: 3 / 4;
-  background: var(--clr-surface-2);
-  border: 1px solid var(--clr-border);
   border-radius: 4px;
+  object-fit: cover;
+  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.8);
 }
 
 /* Content */
