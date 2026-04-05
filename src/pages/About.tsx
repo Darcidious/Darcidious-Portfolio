@@ -1,8 +1,8 @@
 import './About.css'
 
 const SKILLS = [
-  'Nuke', 'After Effects', 'Houdini', 'Blender', 'DaVinci Resolve',
-  'Rotoscoping', 'Motion Tracking', 'Color Grading', 'Green Screen / VFX',
+  'Blender', 'DaVinci Resolve',
+  'Rotoscoping', 'Motion Tracking', 'Color Grading', 'VFX',
   'Particle Simulation', 'Lighting', 'Rendering',
 ]
 
@@ -31,8 +31,7 @@ export default function About() {
           <p className="about__bio">
             Darcidious is a VFX artist and compositor with a passion for
             photorealistic integration, procedural effects, and cutting-edge
-            post-production workflows. With a background spanning film, games,
-            and motion graphics, every frame is treated as a canvas.
+            post-production workflows.
           </p>
 
           <div className="about__skills">
